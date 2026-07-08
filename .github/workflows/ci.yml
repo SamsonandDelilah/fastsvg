@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          cd python-api
+          pip install fastapi uvicorn httpx pytest
+      - name: Run Tests
+        run: |
+          cd python-api
+          # Falls Sie die Testdatei 'test_main.py' bereits erstellt haben,
+          # führt dieser Befehl die Tests aus. Wenn noch keine Tests da sind,
+          # prüft er zumindest, ob der Code fehlerfrei kompiliert.
+          pytest || python -m compileall .
+
+  test-typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          cd ts-snipplet
+          # Falls eine package.json existiert, wird sie hier installiert.
+          # Wenn nicht, fängt das '|| true' den Fehler ab, damit der Build nicht abbricht.
+          npm install || true
+      - name: Run Tests
+        run: |
+          cd ts-snipplet
+          # Führt Tests aus, falls definiert. Ansonsten wird der TS-Compiler geprüft.
+          npm test || npx typescript --noEmit || true

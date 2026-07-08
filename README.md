@@ -1,3 +1,5 @@
+[![CI Status](https://github.com)](https://github.com)
+
 # ⚡ FastSVG - Blazing Fast Dynamic SVG Placeholder Toolset
 
 A lightweight, multi-ecosystem developer utility to generate scalable, razor-sharp SVG placeholders on the fly. 

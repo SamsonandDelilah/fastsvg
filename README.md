@@ -1,4 +1,4 @@
-[![CI Status](https://github.com)](https://github.com)
+[![CI](https://github.com/SamsonandDelilah/fastsvg/actions/workflows/ci.yml/badge.svg)](https://github.com/SamsonandDelilah/fastsvg/actions/workflows/ci.yml)
 
 # ⚡ FastSVG - Blazing Fast Dynamic SVG Placeholder Toolset
 

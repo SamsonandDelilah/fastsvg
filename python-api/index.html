@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastSVG Live Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #bdbdbd;
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin: 10px auto 0;
+            border: 1px solid #ddd;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>⚡ FastSVG Live Platzhalter Test</h1>
+    <p>Direkt eingebetteter SVG-Code (Garantiert fehlerfrei in jedem Browser):</p>
+
+    <div class="grid">
+        <!-- Test 1: Standard Grau -->
+        <div class="card">
+            <p>1. Standard (300x200)</p>
+            <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://w3.org">
+                <rect width="100%" height="100%" fill="#eeeeee" />
+                <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="16px" fill="#aaaaaa"
+                    dominant-baseline="middle" text-anchor="middle">300 x 200</text>
+            </svg>
+        </div>
+
+        <!-- Test 2: Quadratisch -->
+        <div class="card">
+            <p>2. Quadrat (250x250)</p>
+            <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://w3.org">
+                <rect width="100%" height="100%" fill="#eeeeee" />
+                <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="16px" fill="#aaaaaa"
+                    dominant-baseline="middle" text-anchor="middle">250 x 250</text>
+            </svg>
+        </div>
+
+        <!-- Test 3: Custom Farben -->
+        <div class="card">
+            <p>3. Blaues Design</p>
+            <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://w3.org">
+                <rect width="100%" height="100%" fill="#0055ff" />
+                <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="16px" fill="#ffffff"
+                    dominant-baseline="middle" text-anchor="middle">300 x 200</text>
+            </svg>
+        </div>
+
+        <!-- Test 4: Eigener Text -->
+        <div class="card">
+            <p>4. Mit Custom Text</p>
+            <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://w3.org">
+                <rect width="100%" height="100%" fill="#ff5500" />
+                <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="16px" fill="#ffffff"
+                    dominant-baseline="middle" text-anchor="middle">Vorschau</text>
+            </svg>
+        </div>
+    </div>
+
+</body>
+
+</html>
